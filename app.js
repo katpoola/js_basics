@@ -1,26 +1,33 @@
-// muutuja, mille sisu saab muuta
-let name = 'Kadi Tamm';
-name = 'Kadi Lepp';
+/* --- andmetüübid --- */
 
-let firstName = 'Kadi';
-let $ = 'dollar';
+/* primitives - lihtsad andmed */
 
-// muutuja, mis on konstantne
-const surName = 'Tamm';
-//surName = 'Lepp'
+// tekst
+const name = 'Kadi Tamm';
 
-// massiivid
-const numbers = [1, 2, 3, 4];
-numbers.push(6);
+// numbrid
+const age = 15;
+const height = 1.75;
 
-// objektid
+// tõeväärtused - true and false
+const hasKids = false;
+
+// null
+const hasAirplane = null;
+let test;
+
+/* reference types */
+
+// massiiv
+const hobbies = ['music', 'sport'];
+
+// object
 const person = {
 	name: 'Kadi',
-	age: '20'
+	age: 15
 };
+const today = new Date();
 
-person.age = '21';
-
-// konsooli log
-console.log(numbers);
-console.log(person);
+// log
+console.log(today);
+console.log(typeof today);
