@@ -1,34 +1,25 @@
-/* --- tüübiteisendused --- */
+/* --- matemaatilised tehted --- */
 
+const num1 = 100;
+const num2 = 50;
 let val;
 
-// numbrid -> string
-val = String(555);
-val = String(4+4);
-val = String(5.6);
+val = num1 + num2;
+val = num1 - num2;
+val = num1 * num2;
+val = num1 / num2;
+val = num1 % num2; // jääk
 
-// boolean -> string
-val = String(true);
-val = String(false);
+// math
+val = Math.PI;
+val = Math.round(2.5);
+val = Math.ceil(2.3); // ümardab üle
+val = Math.floor(2.8); // ümardab alla
+val = Math.sqrt(64);
+val = Math.abs(-3); // absoluutväärtus
+val = Math.pow(4, 2); // astendamine
 
-// object -> string
-val = String(new Date());
-
-// array -> string
-val = String([1, 2, 3, 4]);
-
-// toString()
-val = (5).toString();
-
-// string -> number
-val = Number('5');
-val = Number('5.6');
-val = Number(true);
-val	= Number(false);
-val	= Number(null);
-val = Number('Tere'); // ei saa
-val = Number([1, 2, 3]); // ei saa
+val = Math.round(Math.random() * 10);
 
 // log
 console.log(val);
-console.log(typeof val);
