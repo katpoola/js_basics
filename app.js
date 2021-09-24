@@ -1,33 +1,34 @@
-/* --- andmetüübid --- */
+/* --- tüübiteisendused --- */
 
-/* primitives - lihtsad andmed */
+let val;
 
-// tekst
-const name = 'Kadi Tamm';
+// numbrid -> string
+val = String(555);
+val = String(4+4);
+val = String(5.6);
 
-// numbrid
-const age = 15;
-const height = 1.75;
+// boolean -> string
+val = String(true);
+val = String(false);
 
-// tõeväärtused - true and false
-const hasKids = false;
+// object -> string
+val = String(new Date());
 
-// null
-const hasAirplane = null;
-let test;
+// array -> string
+val = String([1, 2, 3, 4]);
 
-/* reference types */
+// toString()
+val = (5).toString();
 
-// massiiv
-const hobbies = ['music', 'sport'];
-
-// object
-const person = {
-	name: 'Kadi',
-	age: 15
-};
-const today = new Date();
+// string -> number
+val = Number('5');
+val = Number('5.6');
+val = Number(true);
+val	= Number(false);
+val	= Number(null);
+val = Number('Tere'); // ei saa
+val = Number([1, 2, 3]); // ei saa
 
 // log
-console.log(today);
-console.log(typeof today);
+console.log(val);
+console.log(typeof val);
