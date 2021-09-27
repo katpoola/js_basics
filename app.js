@@ -1,45 +1,50 @@
-let date = new Date();
-let weekDay = date.getDay();
+/* --- üldtsükkel --- */
 
-if (weekDay === 1) {
-	console.log('Esmaspäev');
-} else if (weekDay === 2) {
-	console.log('Teisipäev');
-} else if (weekDay === 3) {
-	console.log('Kolmapäev');
-} else if (weekDay === 4) {
-	console.log('Neljapäev');
-} else if (weekDay === 5) {
-	console.log('Reede');
-} else if (weekDay === 6) {
-	console.log('Laupäev');
-} else if (weekDay === 0) {
-	console.log('Pühapäev');
-} else {
-	console.log('ERROR!!!!!!!!');
+// for 
+for(let i = 0; i < 10; i++) {
+	if(i % 2 === 0)
+		console.log(i)
 }
 
+for(let i = 0; i < 10; i++) {
+	if (i === 5) break;
+	if (i === 5) continue;
+	console.log(i)
+}
 
-switch(weekDay){
-	case 1:
-		console.log('Esmaspäev');
-		break;
-	case 2:
-		console.log('Teisipäev');
-		break;
-	case 3:
-		console.log('Kolmapäev');
-		break;
-	case 4:
-		console.log('Neljapäev');
-		break;
-	case 5:
-		console.log('Reede');
-		break;
-	case 6:
-		console.log('Laupäev');
-		break;
-	case 0:
-		console.log('Pühapäev');
-		break;
+// while
+let i = 0;
+while(i < 10){
+	console.log(i);
+	i++;
+}
+
+// do while 
+let j = 0;
+do{
+	console.log(j);
+	j++;
+} while(j < 10); 
+
+
+// tsükklid ja massiivid
+const cars = ['Ford', 'Honda', 'Toyota'];
+for(let i = 0; i < cars.length; i++) {
+	console.log(cars[i]);
+}
+
+// foreach
+cars.forEach(function(car, index) {
+	console.log(`${index + 1} - ${car}`);
+});
+
+// näide
+const person = {
+	firstName: 'Kadi',
+	lastName: 'Tamm',
+	age: 25
 };
+
+for(let element in person) {
+	console.log(`${element} - ${person[element]}`);
+}
