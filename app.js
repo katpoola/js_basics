@@ -1,26 +1,86 @@
-/* --- ajatöötlus --- */
+/* --- tingimuslaused --- */
 
-const today = new Date();
+/*
+if (tingimus) {
+	// tingimus if puhul
+} else {
+	// tegevused else puhul
+}
+*/
 
-val = today.getMonth(); // jaanuar = 0
-val = today.getDate();
-val = today.getDay();
-val = today.getFullYear();
-val = today.getHours();
-val = today.getMinutes();
-val = today.getSeconds();
-val = today.getMilliseconds();
-val = today.getTime();
+const id = 100
 
-birthday = new Date('10/02/2021 12:00:36');
+// võrdub   				  == 
+// võrdub + tüübikontroll     ===
+// ei võrdu   				  !=
+// ei võrdu + tüübikontroll   !==
 
-birthday.setMonth(2);
-birthday.setDate(12);
-birthday.setFullYear(2020);
-birthday.setHours(17);
-birthday.setMinutes(38);
-birthday.setSeconds(40);
-birthday.setMilliseconds(15);
+if(id !== 100) {
+	console.log('OK');
+} else {
+	console.log('NOT OK!');
+};
 
-console.log(today);
-console.log(birthday);
+let testId;
+if (typeof testId !== 'undefined') {
+	console.log('id is ok')
+} else {
+	console.log('id is not exist')
+};
+
+
+// < ja >
+
+if (id > 100) {
+	console.log('id is > 100')
+} else {
+	console.log('id is =< 100')
+};
+
+
+// if - else if - else
+
+let color = 'green';
+
+if (color === 'red') {
+	console.log('Stop!');
+} else if (color === 'yellow') {
+	console.log('Attention!');
+} else if (color === 'green') {
+	console.log('Go!');
+} else {
+		console.log('Color is not allowed!')
+};
+
+
+// and - &&
+
+let name = 'Kadi';
+let age = 70;
+
+if (age > 0 && age <= 12) {
+	console.log(`${name} on laps`);
+} else if (age > 12 && age < 18) {
+	console.log(`${name} on noor`);
+} else {
+	console.log(`${name} on täiskasvanud`);
+};
+
+
+// or - ||
+
+if (age < 18 || age > 65) {
+	console.log(`${name} ei saa registreerida!`);
+} else {
+	console.log(`${name} saab registreerida.`);
+};
+
+
+// ? - ternary operator
+
+console.log(id === 100 ? 'OK' : 'NOT OK');
+
+if (id === 10) 
+	console.log('OK');
+else 
+	console.log('NOT OK');
