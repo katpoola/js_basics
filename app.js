@@ -1,50 +1,48 @@
-/* --- üldtsükkel --- */
+/* --- deklareerimine --- */
 
-// for 
-for(let i = 0; i < 10; i++) {
-	if(i % 2 === 0)
-		console.log(i)
+function greeting(firstName = 'Kadi', lastName = 'Tamm') {
+	/*
+	if (typeof firstName === 'undefined') {
+		firstName = 'Sussy';
+	}
+	if (typeof lastName === 'undefined') {
+		lastName = 'Baka';
+	}
+	*/
+	return 'Tere, ' + firstName + ' ' + lastName;
 }
+// kasutamine
+greet = greeting('Katriin', 'Poolakese')
+console.log(greet);
 
-for(let i = 0; i < 10; i++) {
-	if (i === 5) break;
-	if (i === 5) continue;
-	console.log(i)
-}
+// funktsioon defineeritud nagu const
+const square = function(number = 3) {
+	return Math.pow(number, 2);
+};
+console.log(square());
 
-// while
-let i = 0;
-while(i < 10){
-	console.log(i);
-	i++;
-}
+// funktsioon, mis kohe töötab koodis
+(function() {
+	console.log('Function work');
+})();
 
-// do while 
-let j = 0;
-do{
-	console.log(j);
-	j++;
-} while(j < 10); 
+(function(name) {
+	console.log('Tere, ' + name);
+})('Kata');
 
-
-// tsükklid ja massiivid
-const cars = ['Ford', 'Honda', 'Toyota'];
-for(let i = 0; i < cars.length; i++) {
-	console.log(cars[i]);
-}
-
-// foreach
-cars.forEach(function(car, index) {
-	console.log(`${index + 1} - ${car}`);
-});
-
-// näide
-const person = {
-	firstName: 'Kadi',
-	lastName: 'Tamm',
-	age: 25
+// funktsioon objekti atribuudina
+const todoList = {
+	add: function(task) {
+		console.log(task + ' is added');
+	},
+	edit: function(oldTask, newTask) {
+		console.log(`${oldTask} is chaged to ${newTask}`);
+	},
+	delete: function(task) {
+		console.log(task + ' is deleted');
+	}
 };
 
-for(let element in person) {
-	console.log(`${element} - ${person[element]}`);
-}
+todoList.add('Study JS');
+todoList.edit('Study JS', 'Study Typescript')
+todoList.delete('Study JS')
