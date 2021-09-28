@@ -1,48 +1,33 @@
-/* --- deklareerimine --- */
+/* --- DOM elemendid --- */
 
-function greeting(firstName = 'Kadi', lastName = 'Tamm') {
-	/*
-	if (typeof firstName === 'undefined') {
-		firstName = 'Sussy';
-	}
-	if (typeof lastName === 'undefined') {
-		lastName = 'Baka';
-	}
-	*/
-	return 'Tere, ' + firstName + ' ' + lastName;
-}
-// kasutamine
-greet = greeting('Katriin', 'Poolakese')
-console.log(greet);
+let val;
 
-// funktsioon defineeritud nagu const
-const square = function(number = 3) {
-	return Math.pow(number, 2);
-};
-console.log(square());
+val = document;
+val = document.all;
+val = document.all[5];
+val = document.all.lenght;
+val = document.head;
+val = document.body;
+val = document.doctype;
+val = document.domain;
+val = document.URL;
+val = document.characterSet;
+val = document.contentType;
 
-// funktsioon, mis kohe töötab koodis
-(function() {
-	console.log('Function work');
-})();
+val = document.forms;
+val = document.forms[0];
+val = document.forms[0].method;
+val = document.forms[0].action;
+val = document.forms[0].id;
 
-(function(name) {
-	console.log('Tere, ' + name);
-})('Kata');
+val = document.links;
+val = document.links[1];
+val = document.links[1].id;
+val = document.links[1].className;
 
-// funktsioon objekti atribuudina
-const todoList = {
-	add: function(task) {
-		console.log(task + ' is added');
-	},
-	edit: function(oldTask, newTask) {
-		console.log(`${oldTask} is chaged to ${newTask}`);
-	},
-	delete: function(task) {
-		console.log(task + ' is deleted');
-	}
-};
+val = document.scripts;
+val = document.scripts[0];
+val = document.scripts[0].getAttribute('src');
 
-todoList.add('Study JS');
-todoList.edit('Study JS', 'Study Typescript')
-todoList.delete('Study JS')
+
+console.log(val);
