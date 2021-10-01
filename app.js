@@ -2,17 +2,23 @@
 
 let val;
 
-val = document.querySelectorAll('.collection-item');
-val = document.querySelectorAll('li');
+const list = document.querySelector('ul');
+const listItem = document.querySelector('li:first-child');
 
-oddLi = document.querySelectorAll('li:nth-child(odd)');
-evenLi = document.querySelectorAll('li:nth-child(even)');
+val = list.children;
+val = list.children[1];
+// list.children[1].textContent = 'Study XML';
+// val = list.children[2].children[0].style.color = 'blue';
 
-oddLi.forEach(function(li) {
-	li.style.background = '#aaa';	
-});
-evenLi.forEach(function(li) {
-	li.style.background = '#ccc'
+val = list.firstElementChild;
+val = list.lastElementChild;
+val = list.childElementCount;
 
-});
+val = listItem.parentElement;
+val = listItem.parentElement.parentElement;
+
+val = listItem.nextElementSibling;
+val = listItem.nextElementSibling.nextElementSibling;
+val = listItem.previousElementSibling;
+
 console.log(val);
