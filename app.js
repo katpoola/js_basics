@@ -1,24 +1,20 @@
-/* --- DOM elementide käsitlemine --- */
-
+/* --- DOM elementide loomine --- */
 let val;
 
-const list = document.querySelector('ul');
-const listItem = document.querySelector('li:first-child');
+// elemendi loomine
+const li = document.createElement('li');
 
-val = list.children;
-val = list.children[1];
-// list.children[1].textContent = 'Study XML';
-// val = list.children[2].children[0].style.color = 'blue';
+// klassi lisamine
+li.className = 'collection-item';
 
-val = list.firstElementChild;
-val = list.lastElementChild;
-val = list.childElementCount;
+// teksti lisamine
+li.appendChild(document.createTextNode('Study JS element creation'));
 
-val = listItem.parentElement;
-val = listItem.parentElement.parentElement;
+// kodune töö - loo link X näitamiseks
 
-val = listItem.nextElementSibling;
-val = listItem.nextElementSibling.nextElementSibling;
-val = listItem.previousElementSibling;
 
-console.log(val);
+// lisame li elemendi ul-isse
+const ul = document.querySelector('ul');
+ul.appendChild(li);
+
+console.log(li);
