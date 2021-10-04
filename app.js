@@ -1,24 +1,14 @@
-/* --- DOM elementide loomine --- */
-let val;
+/* ---  --- */
+// event elements
+const form = document.querySelector('form');
+const taskInput = document.querySelector('#task');
 
-// elemendi loomine
-const li = document.createElement('li');
+form.addEventListener('submit', runEvent);
 
-// klassi lisamine
-li.className = 'collection-item';
+function runEvent(e) {
+	console.log(`Event is ${e.type}`);
+	console.log(taskInput.value);
+	taskInput.value = '';
+	e.preventDefault(); // alati viimasena
+};
 
-// teksti lisamine
-li.appendChild(document.createTextNode('Study JS element creation'));
-
-// kodune töö - loo link X näitamiseks
-const link = document.createElement('a');
-link.className = 'secondary-content';
-link.appendChild(document.createTextNode('X'));
-link.setAttribute('href', '#');
-li.appendChild(link);
-
-// lisame li elemendi ul-isse
-const ul = document.querySelector('ul');
-ul.appendChild(li);
-
-console.log(li);
