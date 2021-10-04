@@ -11,7 +11,10 @@ li.className = 'collection-item';
 li.appendChild(document.createTextNode('Study JS element creation'));
 
 // kodune töö - loo link X näitamiseks
-
+const a = document.createElement('a');
+a.className = 'secondary-content';
+a.appendChild(document.createTextNode('X'))
+li.appendChild(a);
 
 // lisame li elemendi ul-isse
 const ul = document.querySelector('ul');
