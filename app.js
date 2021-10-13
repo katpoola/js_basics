@@ -3,13 +3,15 @@ const form = document.querySelector('form');
 const taskInput = document.querySelector('#task');
 const list = document.querySelector('ul');
 const clearBtn = document.querySelector('#clear');
+const taskFilter = document.querySelector('#filter');
 
 // events
 form.addEventListener('submit', addTask);
 list.addEventListener('click', delTask);
 clearBtn.addEventListener('click', delAll);
+taskFilter.addEventListener('keyup', filterTasks);
 
-// page reload
+// page reload event
 document.addEventListener('DOMContentLoaded', getFromLS());
 
 // adding task
@@ -106,4 +108,18 @@ function getFromLS(e) {
 		list.appendChild(li);
 	});
 	localStorage.setItem('tasks', JSON.stringify(tasks));
+};
+
+// filter tasks
+function filterTasks(e) {
+	const text = e.target.value.toLowerCase();
+	const tasks = document.querySelectorAll('li');
+	tasks.forEach(function(li) {
+		const task = li.firstChild.textContent.toLowerCase();
+		if (task.indexOf(text) != -1) {
+			li.style.display = 'block';
+		} else {
+			li.style.display = 'none';
+		}
+	});
 };
