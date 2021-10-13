@@ -49,6 +49,7 @@ function delAll() {
 			list.removeChild(list.firstChild);
 		};
 	};
+	localStorage.clear();
 };
 
 // add task to local storage
