@@ -26,6 +26,8 @@ function addTask(e) {
 	li.appendChild(link);
 	list.appendChild(li);
 
+	addTaskToLS(taskInput.value);
+
 	taskInput.value = '';
 	e.preventDefault();
 };
@@ -46,4 +48,17 @@ function delAll() {
 			list.removeChild(list.firstChild);
 		};
 	}	
+};
+
+// add task to local storage
+function addTaskToLS(task) {
+	let tasks;
+	if (localStorage.getItem('tasks') === null) {
+		tasks = [];
+	} else {
+		tasks = JSON.parse(localStorage.getItem('tasks'));
+	}
+	tasks.push(task);
+	console.log(tasks);
+	localStorage.setItem('tasks', JSON.stringify(tasks));
 };
