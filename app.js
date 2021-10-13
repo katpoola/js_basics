@@ -9,6 +9,8 @@ form.addEventListener('submit', addTask);
 list.addEventListener('click', delTask);
 clearBtn.addEventListener('click', delAll);
 
+// page reload
+document.addEventListener('DOMContentLoaded', getFromLS());
 
 // adding task
 function addTask(e) {
@@ -76,6 +78,32 @@ function delTaskFromLS(task) {
 		if (tasksElement === task) {
 			tasks.splice(tasksIndex, 1);
 		};
+	});
+	localStorage.setItem('tasks', JSON.stringify(tasks));
+};
+
+// get tasks from local storage
+function getFromLS(e) {
+	let tasks;
+	if (localStorage.getItem('tasks') === null) {
+		tasks = [];
+	} else {
+		tasks = JSON.parse(localStorage.getItem('tasks'));
+	};
+	tasks.forEach(function(tasksElement) {
+		const li = document.createElement('li');
+		const link = document.createElement('a');
+	
+		li.className = 'collection-item';
+		li.appendChild(document.createTextNode(tasksElement));
+
+	
+		link.className = 'secondary-content';
+		link.appendChild(document.createTextNode('X'));
+		link.setAttribute('href', '#');
+
+		li.appendChild(link);
+		list.appendChild(li);
 	});
 	localStorage.setItem('tasks', JSON.stringify(tasks));
 };
